@@ -1,3 +1,6 @@
+
+//This problem tends to be solved in KMP
+
 class Solution {
 public:
     int strStr(string haystack, string needle) {
