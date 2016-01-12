@@ -1,0 +1,33 @@
+class MinStack {
+    vector<int> Mystack;
+   
+    vector<int> MyMinStack;
+public:
+    void push(int x) {
+        Mystack.push_back(x);
+        if (MyMinStack.size() == 0 || MyMinStack[MyMinStack.size()-1] >= x)
+            MyMinStack.push_back(x);
+        
+        
+    }
+
+    void pop() {
+        if (Mystack[Mystack.size() - 1] == MyMinStack[MyMinStack.size() - 1])
+            MyMinStack.erase(MyMinStack.end() - 1);
+            
+        Mystack.erase(Mystack.end() - 1);
+        
+    }
+
+    int top() {
+        
+        return Mystack[Mystack.size() - 1];
+        
+        
+    }
+
+    int getMin() {
+        return MyMinStack[MyMinStack.size() - 1];
+        
+    }
+};
